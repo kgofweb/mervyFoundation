@@ -1,0 +1,87 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 6vh;
+    background-color: #fff;
+    padding: 0 .8rem;
+    z-index: 200;
+
+    &-logo {
+      text-transform: uppercase;
+        font-weight: bold;
+      border-right: 3px solid #2c3e50;
+      padding-right: .5rem;
+    }
+
+    &-menu {
+      // En dessous des 767px
+      @media screen and (max-width: 767px) {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 60%;
+        height: 100vh;
+        padding: 2.8rem 0 0 0;
+        // background-color: #ff9f43;
+        background-color: #ccc;
+        transition: right 0.5s ease-in-out;
+        z-index: 100;
+      }
+    }
+
+    &-link {
+      font-size: .8rem;
+    }
+
+    &-item {
+      padding: .6rem 1rem;
+      font-size: .900rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    &-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    &-toggle {
+      font-size: 1.5rem;
+    }
+
+    &-menu.show {
+      right: 0%;
+    }
+
+    // Desktop version
+    // Au dessus des 768px
+    @media screen and (min-width: 768px) {
+      &-link {
+        font-size: .9rem;
+      }
+
+      &-toggle {
+        display: none;
+      }
+
+      &-close {
+        display: none;
+      }
+
+      &-list {
+        display: flex;
+      }
+    }
+  }
+}
